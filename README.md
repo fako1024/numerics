@@ -47,7 +47,7 @@ func BetaIncomplete(x, a, b float64) float64
 // beta function, representing the cumulative distribution of the binomial PDF  
 func Binomial(x, k, n float64) float64
 ```
-The documentation for root finding methods can be found in the sub-package `root` [here](https://github.com/fako1024/numerics/root).
+The documentation for root finding methods can be found in the sub-package `root`.
 
 ## Examples
 For some simple examples, have a look at the `numerics_test.go` file.
