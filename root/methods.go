@@ -29,6 +29,9 @@ func Bisect(fx func(x float64) float64, aInit, bInit float64) float64 {
 		// Determine the function value at that value, return if within tolerance of
 		// expectation
 		fxVal := fx(c)
+		if math.IsNaN(fxVal) {
+			return fxVal
+		}
 		if fxVal == 0 || (b-a)/2. < bisectTolerance {
 			return c
 		}

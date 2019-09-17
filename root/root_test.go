@@ -41,6 +41,14 @@ func TestOptions(t *testing.T) {
 	)
 }
 
+func TestBisectNaN(t *testing.T) {
+	if root := Bisect(func(x float64) float64 {
+		return math.NaN()
+	}, 0., 1.); !math.IsNaN(root) {
+		t.Fatalf("Unexpected non-NaN result for NaN function return: %v", root)
+	}
+}
+
 func TestBisectTable(t *testing.T) {
 
 	testCases := map[string]testCaseBisect{

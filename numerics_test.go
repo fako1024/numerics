@@ -173,9 +173,6 @@ func TestBinomial(t *testing.T) {
 	}
 
 	for _, cs := range testTableBinomial {
-
-		//	fmt.Printf("{%.2f, %.2f, %.2f, %.20f},\n", cs.x, cs.a, cs.b, Binomial(cs.x, cs.a-1., cs.b))
-
 		if binomial := Binomial(cs.x, cs.a-1., cs.b); math.Abs(binomial-cs.expected) > betaEpsilon {
 			t.Fatalf("Test driven call to Binomial failed (x=%.3f, a=%.3f, b=%.3f), want %.19f, have %.19f", cs.x, cs.a, cs.b, cs.expected, binomial)
 		}
