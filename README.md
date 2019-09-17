@@ -1,6 +1,9 @@
 # Method / Tools for numerical methods / statistics
 This package provides several methods / tools that support numerical methods and statistics in Go.
 
+[ ![Build Status](https://app.codeship.com/projects/c1748cc0-bb67-0137-59af-16a3d06fc352/status?branch=master)](https://app.codeship.com/projects/365078) <sup>(master)</sup>  
+[ ![Build Status](https://app.codeship.com/projects/c1748cc0-bb67-0137-59af-16a3d06fc352/status?branch=develop)](https://app.codeship.com/projects/365078) <sup>(develop)</sup>
+
 ## Features
 - Various numeric methods, such as
 	- Complete, incomplete and regularized incomplete Beta function

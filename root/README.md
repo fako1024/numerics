@@ -1,9 +1,6 @@
 # Numerical methods for function root finding
 This package provides numerical methods for finding the root of functions using linear and quadratic / cubic approaches.
 
-[ ![Build Status](https://app.codeship.com/projects/c1748cc0-bb67-0137-59af-16a3d06fc352/status?branch=master)](https://app.codeship.com/projects/365078) <sup>(master)</sup>  
-[ ![Build Status](https://app.codeship.com/projects/c1748cc0-bb67-0137-59af-16a3d06fc352/status?branch=develop)](https://app.codeship.com/projects/365078) <sup>(develop)</sup>
-
 ## Features
 - Numerical root finding methods via a generic interface, including
 	- Linear root finding via Bisection
