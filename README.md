@@ -1,8 +1,7 @@
 # Method / Tools for numerical methods / statistics
 This package provides several methods / tools that support numerical methods and statistics in Go.
 
-[ ![Build Status](https://app.codeship.com/projects/c1748cc0-bb67-0137-59af-16a3d06fc352/status?branch=master)](https://app.codeship.com/projects/365078) <sup>(master)</sup>  
-[ ![Build Status](https://app.codeship.com/projects/c1748cc0-bb67-0137-59af-16a3d06fc352/status?branch=develop)](https://app.codeship.com/projects/365078) <sup>(develop)</sup>
+![Build/Test Status](https://github.com/fako1024/numerics/workflows/Go/badge.svg)
 
 ## Features
 - Various numeric methods, such as
