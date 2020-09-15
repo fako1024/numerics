@@ -1,7 +1,11 @@
 # Method / Tools for numerical methods / statistics
-This package provides several methods / tools that support numerical methods and statistics in Go.
 
-![Build/Test Status](https://github.com/fako1024/numerics/workflows/Go/badge.svg)
+[![Github Release](https://img.shields.io/github/release/fako1024/numerics.svg)](https://github.com/fako1024/numerics/releases)
+[![GoDoc](https://godoc.org/github.com/fako1024/numerics?status.svg)](https://godoc.org/github.com/fako1024/numerics/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/fako1024/numerics)](https://goreportcard.com/report/github.com/fako1024/numerics)
+[![Build/Test Status](https://github.com/fako1024/numerics/workflows/Go/badge.svg)](https://github.com/fako1024/numerics/actions?query=workflow%3AGo)
+
+This package provides several methods / tools that support numerical methods and statistics in Go.
 
 ## Features
 - Various numeric methods, such as
