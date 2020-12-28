@@ -4,8 +4,6 @@ import (
 	"math"
 )
 
-const maxRetries = 100
-
 // Finder defines a non-linear approach to root finding
 type Finder struct {
 	fx, dfx func(x float64) float64

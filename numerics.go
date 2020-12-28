@@ -28,7 +28,7 @@ func Beta(a, b float64) float64 {
 	return math.Exp(Lgamma(a) + Lgamma(b) - Lgamma(a+b))
 }
 
-// BetaIncomplete returns the value of the regularized incomplete beta
+// BetaIncompleteRegular returns the value of the regularized incomplete beta
 // function Iₓ(a, b).
 //
 // This is not to be confused with the "incomplete beta function",

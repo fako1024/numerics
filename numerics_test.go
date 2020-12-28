@@ -206,9 +206,3 @@ func TestSign(t *testing.T) {
 	}
 
 }
-
-////////////////////////////////////////////////////////////////////////////////
-
-func relDeviation(a, b float64) float64 {
-	return math.Abs(a-b) / a
-}
