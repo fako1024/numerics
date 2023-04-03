@@ -5,6 +5,10 @@ import (
 	"testing"
 )
 
+const (
+	testEpsilon = 3e-8
+)
+
 func TestBetaComplete(t *testing.T) {
 
 	type testCaseBetaComplete struct {
@@ -37,7 +41,7 @@ func TestBetaComplete(t *testing.T) {
 	}
 
 	for _, cs := range testTableBetaComplete {
-		if beta := Beta(cs.a, cs.b); math.Abs(beta-cs.expected) > betaEpsilon {
+		if beta := Beta(cs.a, cs.b); math.Abs(beta-cs.expected) > testEpsilon {
 			t.Fatalf("Test driven call to Beta failed (a=%.3f, b=%.3f), want %.19f, have %.19f", cs.a, cs.b, cs.expected, beta)
 		}
 	}
@@ -103,11 +107,11 @@ func TestBetaIncomplete(t *testing.T) {
 	}
 
 	for _, cs := range testTableBetaIncomplete {
-		if betaReg := BetaIncompleteRegular(cs.x, cs.a, cs.b); math.Abs(betaReg-cs.expected) > betaEpsilon {
+		if betaReg := BetaIncompleteRegular(cs.x, cs.a, cs.b); math.Abs(betaReg-cs.expected) > testEpsilon {
 			t.Fatalf("Test driven call to BetaIncompleteRegular failed (x=%.3f, a=%.3f, b=%.3f), want %.19f, have %.19f", cs.x, cs.a, cs.b, cs.expected, betaReg)
 		}
 
-		if beta := BetaIncomplete(cs.x, cs.a, cs.b); math.Abs(beta-cs.expected*Beta(cs.a, cs.b)) > betaEpsilon {
+		if beta := BetaIncomplete(cs.x, cs.a, cs.b); math.Abs(beta-cs.expected*Beta(cs.a, cs.b)) > testEpsilon {
 			t.Fatalf("Test driven call to BetaIncomplete failed (x=%.3f, a=%.3f, b=%.3f), want %.19f, have %.19f", cs.x, cs.a, cs.b, cs.expected*Beta(cs.a, cs.b), beta)
 		}
 	}
@@ -173,7 +177,7 @@ func TestBinomial(t *testing.T) {
 	}
 
 	for _, cs := range testTableBinomial {
-		if binomial := Binomial(cs.x, cs.a-1., cs.b); math.Abs(binomial-cs.expected) > betaEpsilon {
+		if binomial := Binomial(cs.x, cs.a-1., cs.b); math.Abs(binomial-cs.expected) > testEpsilon {
 			t.Fatalf("Test driven call to Binomial failed (x=%.3f, a=%.3f, b=%.3f), want %.19f, have %.19f", cs.x, cs.a, cs.b, cs.expected, binomial)
 		}
 	}

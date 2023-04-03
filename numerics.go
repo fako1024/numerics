@@ -122,7 +122,7 @@ func betacf(x, a, b float64) float64 {
 		h *= hfac
 
 		// If sufficient precision is reached, return
-		if math.Abs(hfac-1) < betaEpsilon {
+		if math.Abs(hfac-1.0) < betaEpsilon {
 			return h
 		}
 	}
