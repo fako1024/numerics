@@ -1,3 +1,3 @@
 module github.com/fako1024/numerics
 
-go 1.14
+go 1.18
