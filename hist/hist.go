@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-type H1 interface {
+type Hist1D interface {
 	Print(w io.Writer) error
 
 	// NBins Returns the number of bins in the histogram
