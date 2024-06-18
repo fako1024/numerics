@@ -192,7 +192,7 @@ func (h *H1I) FindBin(x float64) int {
 		return h.nBins + 1
 	}
 
-	return 1 + h.nBins*int((x-h.XMin())/(h.XMax()-h.XMin()))
+	return 1 + int(float64(h.nBins)*(x-h.XMin())/(h.XMax()-h.XMin()))
 }
 
 // Interpolate linearly interpolates between the nearest bin neigbors
