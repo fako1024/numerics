@@ -120,12 +120,12 @@ func (h *H1[T]) MaximumBin() int {
 }
 
 // BinCenter returns the center x value of a particular bin
-func (h *H1[T]) BinCenter(bin int) T {
-	return (h.bins[bin-1] + h.bins[bin]) / 2.0
+func (h *H1[T]) BinCenter(bin int) float64 {
+	return (float64(h.bins[bin-1]) + float64(h.bins[bin])) / 2.0
 }
 
 // Mode returns the mode of the histogram
-func (h *H1[T]) Mode() T {
+func (h *H1[T]) Mode() float64 {
 	return h.BinCenter(h.MaximumBin())
 }
 
@@ -210,9 +210,9 @@ func (h *H1[T]) FindBin(x T) int {
 }
 
 // Interpolate linearly interpolates between the nearest bin neigbors
-func (h *H1[T]) Interpolate(x T) float64 {
+func (h *H1[T]) Interpolate(x float64) float64 {
 
-	xBin := h.FindBin(x)
+	xBin := h.FindBin(T(x))
 
 	if x <= h.BinCenter(1) {
 		return h.BinContent(1)
@@ -221,10 +221,7 @@ func (h *H1[T]) Interpolate(x T) float64 {
 		return h.BinContent(h.NBins())
 	}
 
-	var (
-		x0, x1 T
-		y0, y1 float64
-	)
+	var x0, x1, y0, y1 float64
 	if x <= h.BinCenter(xBin) {
 		y0 = h.BinContent(xBin - 1)
 		x0 = h.BinCenter(xBin - 1)
@@ -237,5 +234,5 @@ func (h *H1[T]) Interpolate(x T) float64 {
 		x1 = h.BinCenter(xBin + 1)
 	}
 
-	return y0 + float64(x-x0)*((y1-y0)/float64(x1-x0))
+	return y0 + (x-x0)*((y1-y0)/(x1-x0))
 }
