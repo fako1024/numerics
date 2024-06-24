@@ -119,6 +119,11 @@ func (h *H1[T]) MaximumBin() int {
 	return maxBin
 }
 
+// MaximumWeight returns the sum of weights in the maximum bin
+func (h *H1[T]) MaximumWeight() float64 {
+	return h.BinContent(h.MaximumBin())
+}
+
 // BinCenter returns the center x value of a particular bin
 func (h *H1[T]) BinCenter(bin int) float64 {
 	return (float64(h.bins[bin-1]) + float64(h.bins[bin])) / 2.0
