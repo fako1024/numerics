@@ -48,13 +48,6 @@ func (h *H1[T]) Print(w io.Writer) error {
 
 	tabw := tabwriter.NewWriter(w, 2, 2, 2, byte(' '), 0)
 
-	yfmt := func(y float64) string {
-		if y > 0 {
-			return strconv.Itoa(int(y))
-		}
-		return ""
-	}
-
 	fmt.Fprintf(w, "Mode: %v\n", h.Mode())
 
 	for i := 0; i < len(h.bins)-1; i++ {
@@ -240,4 +233,11 @@ func (h *H1[T]) Interpolate(x float64) float64 {
 	}
 
 	return y0 + (x-x0)*((y1-y0)/(x1-x0))
+}
+
+func yfmt(y float64) string {
+	if y > 0 {
+		return strconv.FormatFloat(y, 'f', 2, 64)
+	}
+	return ""
 }
